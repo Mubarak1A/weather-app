@@ -1,6 +1,19 @@
 const location = document.getElementById('location');
 
 async function getWeatherData(){
+    let locationName = "Nigeria";
+
+    fetchDataAndEditDom(locationName);
+
+    search.addEventListener("click", function(){
+        searchInput = document.getElementById('search-input');
+        locationName = searchInput.value
+
+        fetchDataAndEditDom(locationName);
+    });
+}
+
+async function fetchDataAndEditDom(locationName) {
     const location = document.getElementById('location');
     const localTime = document.getElementById('local-time');
     const temp = document.getElementById('temp');
@@ -10,12 +23,12 @@ async function getWeatherData(){
     const humidity = document.getElementById('humidity');
     const rainRate = document.getElementById('rain-rate');
     const windSpeed = document.getElementById('wind-speed');
+    const search = document.getElementById('search');
 
-    const response = await fetch("https://api.weatherapi.com/v1/forecast.json?key=76777b5c36eb4241bab173914231411&q=minna", {
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=76777b5c36eb4241bab173914231411&q=${locationName}`, {
         mode: 'cors'
     });
    const data = await response.json();
-   console.log(data)
 
    location.innerHTML = data.location.name;
    localTime.innerHTML = data.location.localtime;
@@ -37,7 +50,6 @@ async function getWeatherData(){
         values.className = "forecast-container";
 
         const time = obj.time.split("").slice(10).join("")
-        console.log(time);
 
         forecastTime.innerHTML = time;
         forecastTemp.innerHTML = `${obj.temp_c} °C`
@@ -52,7 +64,6 @@ async function getWeatherData(){
         const forecastValues = document.getElementById("forecast-values")
         forecastValues.appendChild(values);
     }
-
 }
 
 getWeatherData();
