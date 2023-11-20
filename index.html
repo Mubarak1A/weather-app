@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="main.js" defer></script>
+</head>
+<body class="bg">
+    <div id="content" class="bg">
+        <div id="weather-details">
+            <div id="weather-profile">
+                <div class="location-details">
+                    <h2 id="location"></h2>
+                    <p id="local-time"></p>
+                </div>
+                <div class="weather-condition">
+                    <h1 id="temp"></h1>
+                    <h3 id="condition"></h3>
+                    <img id="weather-icon" src="#" alt="" style="width: 150px; height:auto;">
+                </div>
+            </div>
+            <div id="extras">
+                <div class="feels-like">
+                    <div id="feels-like"  class="value"></div>
+                    <div class="extras-title">
+                        <p class="text">Feels Like</p>
+                        <img src="./images/feels-like.png" alt="">
+                    </div>
+                </div>
+                <div class="humidity">
+                    <div id="humidity" class="value"></div>
+                    <div class="extras-title">
+                        <p class="text">Humidity</p>
+                        <img src="./images/humidity.png" alt="">
+                    </div>
+                </div>
+                <div class="rain-rate">
+                    <div id="rain-rate" class="value"></div>
+                    <div class="extras-title">
+                        <p class="text">Rain Rate</p>
+                        <img src="./images/rain.png" alt="">
+                    </div>
+                </div>
+                <div class="wind-speed">
+                    <div id="wind-speed"  class="value"></div>
+                    <div class="extras-title">
+                        <p class="text">Wind Speed</p>
+                        <img src="./images/storm.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="search-section">
+                <input id="search-input" type="text" placeholder="search for location...">
+                <button id="search"></button>
+            </div>
+        </div>
+        <div id="forecast">
+            
+            <div id="forecast-values"></div>
+        </div>
+    </div>
+
+</body>
+</html>
